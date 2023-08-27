@@ -25,17 +25,17 @@ hud_time = True
 hud_rainbow = False
 hud_color = "white"
 
-circle = True
+circle = False
 circle_rainbow = False
 circle_color = "white"
 circle_size = 150
 cricle_width = 1.5
 
 cross = True
-cross_rainbow = False
+cross_rainbow = True
 cross_color = "white"
-cross_size = 50
-cross_thickness = 3
+cross_size = 15
+cross_thickness = 1.5
 
 ##################################################################
 
@@ -72,9 +72,9 @@ def rainbow_text():
     elif circle == True and circle_rainbow == False:
         draw_centered_circle(canvas, 150, 150, circle_size, circle_color, cricle_width)
 
-    if cross == True and circle_rainbow == True:
+    if cross == True and cross_rainbow == True:
         draw_cross(canvas, 150, 150, 6, cross_thickness, rainbow_color_for_cross)
-    elif cross == True and circle_rainbow == False:
+    elif cross == True and cross_rainbow == False:
         draw_cross(canvas, 150, 150, cross_size, cross_thickness, cross_color)
     root.after(20, rainbow_text)  # 실행 간격을 20ms로 변경
 def update_time():
